@@ -124,6 +124,161 @@
           }
         }
       }
+    },
+    "leaderboards": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/leaderboards",
+      "sourceRoot": "apps/leaderboards/src",
+      "prefix": "workspace",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/leaderboards",
+            "index": "apps/leaderboards/src/index.html",
+            "main": "apps/leaderboards/src/main.ts",
+            "polyfills": "apps/leaderboards/src/polyfills.ts",
+            "tsConfig": "apps/leaderboards/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/leaderboards/src/favicon.ico",
+              "apps/leaderboards/src/assets"
+            ],
+            "styles": ["apps/leaderboards/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/leaderboards/src/environments/environment.ts",
+                  "with": "apps/leaderboards/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "leaderboards:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "leaderboards:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "leaderboards:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/leaderboards/tsconfig.app.json",
+              "apps/leaderboards/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/leaderboards/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/leaderboards/src/test.ts",
+            "tsConfig": "apps/leaderboards/tsconfig.spec.json",
+            "karmaConfig": "apps/leaderboards/karma.conf.js",
+            "polyfills": "apps/leaderboards/src/polyfills.ts",
+            "styles": [],
+            "scripts": [],
+            "assets": []
+          }
+        }
+      }
+    },
+    "leaderboards-e2e": {
+      "root": "apps/leaderboards-e2e",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/leaderboards-e2e/protractor.conf.js",
+            "devServerTarget": "leaderboards:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "leaderboards:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/leaderboards-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**", "!apps/leaderboards-e2e/**"]
+          }
+        }
+      }
+    },
+    "test-btn-lib": {
+      "projectType": "library",
+      "root": "libs/test-btn-lib",
+      "sourceRoot": "libs/test-btn-lib/src",
+      "prefix": "workspace",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/test-btn-lib/tsconfig.lib.json",
+              "libs/test-btn-lib/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/test-btn-lib/**"]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/test-btn-lib/src/test.ts",
+            "tsConfig": "libs/test-btn-lib/tsconfig.spec.json",
+            "karmaConfig": "libs/test-btn-lib/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

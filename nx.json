@@ -17,6 +17,16 @@
     "dashboard-e2e": {
       "tags": [],
       "implicitDependencies": ["dashboard"]
+    },
+    "leaderboards": {
+      "tags": []
+    },
+    "leaderboards-e2e": {
+      "tags": [],
+      "implicitDependencies": ["leaderboards"]
+    },
+    "test-btn-lib": {
+      "tags": []
     }
   }
 }
