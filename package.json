@@ -29,7 +29,6 @@
   },
   "private": true,
   "dependencies": {
-    "@nrwl/angular": "^9.0.0",
     "@angular/animations": "9.0.0",
     "@angular/common": "9.0.0",
     "@angular/compiler": "9.0.0",
@@ -38,6 +37,7 @@
     "@angular/platform-browser": "9.0.0",
     "@angular/platform-browser-dynamic": "9.0.0",
     "@angular/router": "9.0.0",
+    "@nrwl/angular": "^9.0.0",
     "core-js": "^2.5.4",
     "rxjs": "~6.5.0",
     "zone.js": "^0.10.2"
@@ -63,6 +63,11 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
-    "@types/jasmine": "~2.8.8"
+    "@types/jasmine": "~2.8.8",
+    "@nrwl/jest": "9.0.0",
+    "jest": "24.1.0",
+    "@types/jest": "24.0.9",
+    "ts-jest": "24.0.0",
+    "@nrwl/node": "9.0.0"
   }
 }

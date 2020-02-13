@@ -249,34 +249,28 @@
         }
       }
     },
-    "test-btn-lib": {
+    "my-utils-lib": {
+      "root": "libs/my-utils-lib",
+      "sourceRoot": "libs/my-utils-lib/src",
       "projectType": "library",
-      "root": "libs/test-btn-lib",
-      "sourceRoot": "libs/test-btn-lib/src",
-      "prefix": "workspace",
+      "schematics": {},
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/test-btn-lib/tsconfig.lib.json",
-              "libs/test-btn-lib/tsconfig.spec.json"
+              "libs/my-utils-lib/tsconfig.lib.json",
+              "libs/my-utils-lib/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/test-btn-lib/**"]
+            "exclude": ["**/node_modules/**", "!libs/my-utils-lib/**"]
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@nrwl/jest:jest",
           "options": {
-            "main": "libs/test-btn-lib/src/test.ts",
-            "tsConfig": "libs/test-btn-lib/tsconfig.spec.json",
-            "karmaConfig": "libs/test-btn-lib/karma.conf.js"
+            "jestConfig": "libs/my-utils-lib/jest.config.js",
+            "tsConfig": "libs/my-utils-lib/tsconfig.spec.json"
           }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "styleext": "scss"
         }
       }
     }

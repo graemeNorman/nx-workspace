@@ -25,7 +25,7 @@
       "tags": [],
       "implicitDependencies": ["leaderboards"]
     },
-    "test-btn-lib": {
+    "my-utils-lib": {
       "tags": []
     }
   }

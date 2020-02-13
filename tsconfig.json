@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@workspace/test-btn-lib": ["libs/test-btn-lib/src/index.ts"]
+      "@workspace/test-btn-lib": ["libs/test-btn-lib/src/index.ts"],
+      "@workspace/my-utils-lib": ["libs/my-utils-lib/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
