@@ -27,6 +27,36 @@
     },
     "my-utils-lib": {
       "tags": []
+    },
+    "genistar": {
+      "tags": []
+    },
+    "genistar-e2e": {
+      "tags": [],
+      "implicitDependencies": ["genistar"]
+    },
+    "main": {
+      "tags": []
+    },
+    "main-e2e": {
+      "tags": [],
+      "implicitDependencies": ["main"]
+    },
+
+
+    "sub-app1": {
+      "tags": []
+    },
+    "sub-app1-e2e": {
+      "tags": [],
+      "implicitDependencies": ["sub-app1"]
+    },
+    "sub-app2": {
+      "tags": []
+    },
+    "sub-app2-e2e": {
+      "tags": [],
+      "implicitDependencies": ["sub-app2"]
     }
   }
 }
