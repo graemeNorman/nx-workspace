@@ -1,14 +1,22 @@
-<h1>Navigation</h1>
+<h1>Test App(s)</h1>
 <workspace-nav></workspace-nav>
 <br/><br>
 <router-outlet></router-outlet>
 
-<hr>
 
-<h3 class="app-title">Main App Content</h3>
-<div>
-  Points: <span>{{points}}</span>
+<div style="border: 2px solid red; padding: 15px;">
+  <h3 class="app-title">Main App Content</h3>
+  <div> Points: <span>{{points}}</span> </div>
+
+  <button (click)="plus1()">Plus 1</button>
+  <button (click)="reset()">Reset</button>
+
+  <br /><br />
+  <ul>
+    <li>Graeme DOB: {{ itemOne }}</li>
+    <li>Sam DOB: {{ itemTwo }}</li>
+    <li>Jamie DOB: {{ itemThree }}</li>
+  </ul>
 </div>
 
-<button (click)="plus1()">Plus 1</button>
-<button (click)="reset()">Reset</button>
+
