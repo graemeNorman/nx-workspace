@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view1.component.css']
 })
 export class View1Component implements OnInit {
+  itemOne: string;
+  itemThree: string;
 
-  constructor() { }
+  constructor() {
+    const setItemTwo = localStorage.setItem('samDOB', '09091985');
+
+  }
 
   ngOnInit() {
+    this.itemOne = localStorage.getItem('graemeDOB');
+    this.itemThree = localStorage.getItem('jamieDOB');
   }
 
 }
